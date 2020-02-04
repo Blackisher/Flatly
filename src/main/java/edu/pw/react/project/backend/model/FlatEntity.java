@@ -81,11 +81,11 @@ public class FlatEntity {
     @Column(name = "limit_of_quests")
     private int limit_of_quests;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "room_id", referencedColumnName = "room_id")
     private ImageEntity room_image;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.ALL })
     @JoinTable(
             name = "payment_method_of_room",
             joinColumns = { @JoinColumn(name = "room_id") },
@@ -93,7 +93,7 @@ public class FlatEntity {
     )
     Set<PaymentMethodsEntity> payment_methods;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "item_id", referencedColumnName = "room_id", insertable = false, updatable = false)
     private Set<BookingEntity> room_bookings;
 }

@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ActiveProfiles(profiles = {"dev", "it", "prod"})
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class FlatlyApplicationTest {
+public class FlatlyApplicationTest {
 
     @Test
     public void main() {

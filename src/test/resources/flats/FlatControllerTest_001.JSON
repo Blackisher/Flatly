@@ -1,4 +1,5 @@
-{"name_of_room": "Room_for_test",
+{"id": "999999",
+"name_of_room": "Room_for_test",
 "description": "DESCRIPTION",
 "start_date": "2020-01-01",
 "price": "123456789",

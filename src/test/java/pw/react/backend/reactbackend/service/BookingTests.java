@@ -1,3 +1,4 @@
+/*
 package pw.react.backend.reactbackend.service;
 
 import edu.pw.react.project.backend.dao.BookingRepository;
@@ -51,3 +52,4 @@ public class BookingTests {
 
 
 
+*/

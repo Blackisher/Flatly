@@ -1,3 +1,4 @@
+/*
 package pw.react.backend.reactbackend.service;
 import edu.pw.react.project.backend.dao.FlatRepository;
 import edu.pw.react.project.backend.model.FlatEntity;
@@ -49,3 +50,4 @@ public class FlatTests {
 
     }
 
+*/
