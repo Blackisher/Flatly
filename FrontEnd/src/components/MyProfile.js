@@ -32,7 +32,7 @@ class MyProfile extends Component {
         const hashedPassword = passwordHash.generate('password123');
         console.log(hashedPassword);
 
-        fetch(`http://localhost:8080/users/${idUser}`)
+        fetch(`http://flatly-thursday.us-east-1.elasticbeanstalk.com/users/${idUser}`)
             .then((data) => data.json())
             .then((users) => {
                 this.props.userDetailLoaded(users);

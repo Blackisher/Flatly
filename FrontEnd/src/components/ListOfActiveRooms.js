@@ -139,7 +139,7 @@ class ListOfActiveRooms extends Component {
     }
 
     onDeleteClick(id) {
-        fetch("http://localhost:8080/flats/delete/" + id, {
+        fetch("http://flatly-thursday.us-east-1.elasticbeanstalk.com/flats/delete/" + id, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

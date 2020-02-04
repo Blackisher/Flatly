@@ -12,6 +12,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 class FlatlyApplicationTest {
 
     @Test
-    void main() {
+    public void main() {
     }
 }

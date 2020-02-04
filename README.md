@@ -10,13 +10,16 @@ Start FlatlyApplication.java with profile dev
 http://localhost:8080/developer   GET         is available
 http://localhost:8080/ opens in browser (blank page)
 
+http://flatly-thursday.us-east-1.elasticbeanstalk.com
+
 To start front end.
 cd FrontEnd
 npm install
 npm start
 http://localhost:3000/
-It should somehow be connected to http://localhost:8080/
-but for development ... http://localhost:3000/
+https://flatly-thursday.netlify.com //deployed version
+
+
 
 To connect to DB by browser on dev
 run pg4admin, Create if you dont have Database postgres
