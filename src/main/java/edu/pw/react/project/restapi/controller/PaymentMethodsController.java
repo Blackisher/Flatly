@@ -18,7 +18,7 @@ public class PaymentMethodsController {
         this.methodsFlatRepository = repository;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @GetMapping(path = "")
     public ResponseEntity<Collection<PaymentMethodsEntity>> getAllMethods() {
         System.out.println("Getting all payment methods");

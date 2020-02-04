@@ -23,14 +23,14 @@ public class ImageController {
         this.imageRepository = imageRepository;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @GetMapping(path = "")
     public ResponseEntity<Collection<ImageEntity>> getAllImages() {
         System.out.println("Getting all images");
         return ResponseEntity.ok(imageRepository.findAll());
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @PostMapping(value = "")
     @Transactional
     public ResponseEntity<ImageEntity> createImage(@Valid @RequestBody ImageEntity image) {

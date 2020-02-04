@@ -90,7 +90,8 @@ class MyProfile extends Component {
 
     changeUserInfo() {
         console.log(this.state.userDetail);
-        fetch(`http://localhost:8080/users/${idUser}`, {
+        //http://flatly-thursday.us-east-1.elasticbeanstalk.com/users/1
+        fetch(`http://flatly-thursday.us-east-1.elasticbeanstalk.com/users/${idUser}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

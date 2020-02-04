@@ -46,21 +46,21 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @GetMapping(path = "")
     public ResponseEntity<Collection<BookingEntity>> getAllBookingsOfUser(@RequestParam Long id) {
         System.out.println("Getting All bookings");
         return ResponseEntity.ok(flatRepository.findAllReservations(id));
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @GetMapping(path = "/flat/{id}")
     public ResponseEntity<Collection<BookingEntity>> getBookingsByIdOfFlat(@PathVariable Long id) {
         System.out.println("Getting bookings of flat");
         return ResponseEntity.ok(bookingRepository.findAllBookingsOfFlat(id));
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @GetMapping(path = "/{id}")
     public ResponseEntity<BookingEntity> getBookingById(@PathVariable Long id) {
         System.out.println("Getting booking");
@@ -68,7 +68,7 @@ public class BookingController {
         return new ResponseEntity<>(f, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @PostMapping(path = "")
     @Transactional
     public ResponseEntity<BookingEntity> createBooking(@RequestHeader HttpHeaders headers, @Valid @RequestBody BookingEntity booking) {
@@ -93,7 +93,7 @@ public class BookingController {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(booking);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @DeleteMapping(value = "/{id}")
     @Transactional
     public ResponseEntity<String> setBookingNonactive(@PathVariable Long id, @RequestHeader HttpHeaders headers, @Valid @RequestBody BookingEntity booking) {

@@ -17,7 +17,8 @@ class ReservationsOfFlat extends React.Component {
         let id = this.props.match.params.id;
         this.setState({idFlat: id});
         console.log(id)
-        fetch(`http://localhost:8080/bookings/flat/${id}`)
+        //http://flatly-thursday.us-east-1.elasticbeanstalk.com/bookings/flat/1
+        fetch(`http://flatly-thursday.us-east-1.elasticbeanstalk.com/bookings/flat/${id}`)
             .then((data) => data.json())
             .then((reservations) => {
                 console.log(reservations)

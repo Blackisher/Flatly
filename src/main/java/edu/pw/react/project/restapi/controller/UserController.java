@@ -19,14 +19,14 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @GetMapping(path = "/{id}")
     public ResponseEntity<UserEntity> getUserById(@PathVariable Long id) {
         UserEntity u = userRepository.findById(id).orElseGet(UserEntity::new);
         return new ResponseEntity<>(u, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @PostMapping(path = "")
     public ResponseEntity<UserEntity> checkUser(@RequestBody UserEntity userEntity) {
         UserEntity u = userRepository.findByLogin(userEntity.getLogin());
@@ -41,7 +41,7 @@ public class UserController {
         return new ResponseEntity<>(u, HttpStatus.NOT_FOUND);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @PostMapping(value = "/{id}")
     public ResponseEntity<UserEntity> updateUser(@RequestBody UserEntity user) {
         long id = user.getId();

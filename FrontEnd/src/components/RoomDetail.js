@@ -181,7 +181,8 @@ class RoomDetail extends Component {
         //fetch roomdetail if edit
         if (this.props.mode === "edit") {
             let id = this.props.id;
-            fetch(`http://localhost:8080/flats/${id}`)
+            //http://flatly-thursday.us-east-1.elasticbeanstalk.com/flats/1
+            fetch(`http://flatly-thursday.us-east-1.elasticbeanstalk.com/flats/${id}`)
                 .then((data) => data.json())
                 .then((flat) => {
                     this.props.flatDetailLoaded(flat);
@@ -190,7 +191,8 @@ class RoomDetail extends Component {
                     this.setState({flatDetail: this.props.flatDetail})
                 });
         }
-        fetch(`http://localhost:8080/payment`)
+        //
+        fetch(`http://flatly-thursday.us-east-1.elasticbeanstalk.com/payment`)
             .then((data) => data.json())
             .then((methods) => {
                 this.setState({all_payment_methods: methods}, () => {
@@ -393,7 +395,8 @@ class RoomDetail extends Component {
         console.log(flat)
         if (mode === "create") {
             flat = {...flat, id: idFlat}
-            fetch("http://localhost:8080/flats", {
+
+            fetch("http://flatly-thursday.us-east-1.elasticbeanstalk.com/flats", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -412,7 +415,8 @@ class RoomDetail extends Component {
                 }
             });
         } else {
-            fetch(`http://localhost:8080/flats/${idFlat}`, {
+
+            fetch(`http://flatly-thursday.us-east-1.elasticbeanstalk.com/flats/${idFlat}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
