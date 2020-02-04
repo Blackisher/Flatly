@@ -65,13 +65,14 @@ public class FlatController {
 
     @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
     @GetMapping(path = "/{id}")
-    public ResponseEntity<FlatEntity> getFlatById(@RequestHeader HttpHeaders headers, @PathVariable Long id) {
-        logHeaders(headers);
-        if (securityService.isAuthorized(headers)) {
+    public ResponseEntity<FlatEntity> getFlatById(@PathVariable Long id) {
+        //logHeaders(headers);
+        //if (securityService.isAuthorized(headers)) {
+            System.out.println("Getting flat");
             FlatEntity f = flatRepository.findById(id).orElseGet(FlatEntity::new);
             return new ResponseEntity<>(f, HttpStatus.OK);
-        }
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(FlatEntity.EMPTY);
+        //}
+        //return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(FlatEntity.EMPTY);
     }
 
     @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
