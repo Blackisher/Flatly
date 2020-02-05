@@ -1,3 +1,4 @@
+/*
 package edu.pw.react.project;
 
 import org.junit.Test;
@@ -15,3 +16,4 @@ public class FlatlyApplicationTest {
     public void main() {
     }
 }
+*/
