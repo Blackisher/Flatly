@@ -49,21 +49,21 @@ public class FlatController {
         );
     }
 
-    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
+    @CrossOrigin(origins = "*")
     @GetMapping(path = "")
     public ResponseEntity<Collection<FlatEntity>> getAllActiveFlats(@RequestParam Long id) {//FIXME
         System.out.println("Getting all active flats");
         return ResponseEntity.ok(flatRepository.findAllActiveFlats(id));
     }
 
-    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
+    @CrossOrigin(origins = "*")
     @GetMapping(path = "/nonactive")
     public ResponseEntity<Collection<FlatEntity>> getAllNonActiveFlats(@RequestParam Long id) {
         System.out.println("Getting all nonactive flats");
         return ResponseEntity.ok(flatRepository.findAllNonactiveFlats(id));
     }
 
-    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
+    @CrossOrigin(origins = "*")
     @GetMapping(path = "/{id}")
     public ResponseEntity<FlatEntity> getFlatById(@PathVariable Long id) {
         //logHeaders(headers);
@@ -75,7 +75,7 @@ public class FlatController {
         //return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(FlatEntity.EMPTY);
     }
 
-    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
+    @CrossOrigin(origins = "*")
     @PostMapping(value = "/delete/{id}")
     public ResponseEntity<String> setRoomNonactive(@PathVariable Long id) throws ResourceNotFoundException {
         if (!flatRepository.existsById(id))
@@ -85,7 +85,7 @@ public class FlatController {
         return new ResponseEntity<>("Flat was set to nonactive", HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
+    @CrossOrigin(origins = "*")
     @PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_VALUE)
     @Transactional
     public ResponseEntity<FlatEntity> createFlat(@Valid @RequestBody FlatEntity flat) {
@@ -99,7 +99,7 @@ public class FlatController {
         return new ResponseEntity<>(flatRepository.save(flat), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
+    @CrossOrigin(origins = "*")
     @PostMapping(value = "/{id}")
     public ResponseEntity<FlatEntity> updateFlat(@RequestBody FlatEntity flat) {
         long id = flat.getId();
@@ -109,7 +109,7 @@ public class FlatController {
         return new ResponseEntity<>(flatRepository.saveAndFlush(flatRepository.save(flat)), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "https://flatly-thursday.netlify.com")
+    @CrossOrigin(origins = "*")
     @DeleteMapping(value = "/{id}")
     @Transactional
     public ResponseEntity<String> setBookingNonactive(@PathVariable Long id, @RequestHeader HttpHeaders headers, @Valid @RequestBody FlatEntity flat) {
