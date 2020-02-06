@@ -61,11 +61,6 @@ loginButton: {
     marginVertical: 5,
     marginHorizontal: 5,
   },
-// fbLoginButton: {
-//   height: 45,
-//   marginTop: 10,
-//   backgroundColor: 'transparent',
-// },
 };
 
 
