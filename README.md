@@ -10,14 +10,14 @@ Start FlatlyApplication.java with profile dev
 http://localhost:8080/developer   GET         is available
 http://localhost:8080/ opens in browser (blank page)
 
-http://flatly-thursday.us-east-1.elasticbeanstalk.com
+http://flatly.us-east-1.elasticbeanstalk.com //deployed backend 
 
 To start front end.
 cd FrontEnd
 npm install
 npm start
 http://localhost:3000/
-https://flatly-thursday.netlify.com //deployed version
+https://flatly-thursday.netlify.com //deployed version ( only login page works , error is with cors policy )
 
 
 
